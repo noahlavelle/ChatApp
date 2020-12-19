@@ -1,0 +1,57 @@
+.sidebar {
+    height: 100%;
+    width: 200px;
+
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+
+    position: fixed;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+
+    color: var(--text-color-light);
+    background-color: var(--background-color-dark);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.sidebar article {
+    padding-left: 10%;
+}
+
+article summary {
+    font-size: 14px;
+}
+
+article button {
+    display: block;
+    border-radius: 8px;
+    margin: 3% 5% 0 0%;
+    padding: 2% 0 2% 5%;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text-color-light);
+}
+
+article button:hover  {
+    background-color: var(--background-color-light);
+    color: #D7D8D9
+}
+
+.sidebar button::before {
+    color: var(--text-color-light);
+    content: "# ";
+}
+
+.sidebar button[data-focused="true"] {
+    color: var(--text-color-normal) !important;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0 !important;
+}

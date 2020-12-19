@@ -1,0 +1,32 @@
+#content {
+    margin-left: 225px;
+}
+
+.nostylebutton {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.nostylebutton:hover {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.nostylebutton:active {
+    outline: none;
+    border: none;
+}
+
+.nostylebutton:focus {
+    outline: 0;
+}
+
+.displayImage {
+    border-radius: 8px;
+    max-width: 400px;
+    max-height: 400px;
+}

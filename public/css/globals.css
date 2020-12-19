@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+html[data-theme='light'] {
+    --text-color-normal: #000000;
+    --text-color-light: #747F8D;
+    --background-color-light: #ffffff;
+    --background-color-dark: #f2f3f5;
+    --highlight: #7289da;
+}
+  
+html[data-theme='dark'] {
+    --text-color-normal: #ffffff;
+    --text-color-light: #99aab5;
+    --background-color-light: #36393F;
+    --background-color-verylight: #40444B;
+    --background-color-dark: #2F3136;
+    --highlight: #7289da;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color-normal);
+    background-color: var(--background-color-light);
+}
+
+a {
+    color: #23A5F4
+}

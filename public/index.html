@@ -1,0 +1,47 @@
+<!doctype html>
+<html data-theme="dark">
+
+<head>
+  <title>Socket.IO chat</title>
+  <link rel="stylesheet" href="./css/chat.css">
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/globals.css">
+  <link rel="stylesheet" href="./css/sidebar.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <article>
+      <details>
+        <summary>Chats</summary>
+        <button class="nostylebutton" onclick="changeChannel('info')" id="infoli" data-focused="true">info</button>
+        <button class="nostylebutton" onclick="changeChannel('announcments')" id="announcmentsli" data-focused="false">announcments</button>
+        <button class="nostylebutton" onclick="changeChannel('general')" id="generalli" data-focused="false">general</button>
+        <button class="nostylebutton" onclick="changeChannel('memes')" id="memesli" data-focused="false">memes</button>
+      </details>
+    </article>
+  </div>
+  <section id="content">
+    <section id="signup">
+      <form id="uname" action="">
+        <label for="uname">Username:</label> <br>
+        <input id="u" autocomplete="off">
+      </form>
+    </section>
+    <section id="chat">
+      <ul id="info"></ul>
+      <ul id="announcments"></ul>
+      <ul id="general"></ul>
+      <ul id="memes"></ul>
+
+      <form id="message" action="">
+        <input id="m" autocomplete="off" placeholder="Message #info" />
+      </form>
+    </section>
+</section>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
