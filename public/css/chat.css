@@ -12,6 +12,7 @@ form#message {
     position: fixed;
     bottom: 30px;
     width: 88%;
+
 }
 
 form#message input {

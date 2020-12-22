@@ -1,0 +1,21 @@
+.contentheader {
+    box-shadow: 0 2px 2px var(--background-color-dark);
+    background-color: var(--background-color-light);
+    margin-left: 190px;
+    padding-left: 30px;
+    position: fixed;
+    width: 100%;
+    height: 46px;
+
+    padding-top: 8px;
+
+    font-size: 22px;
+    color: var(--text-color-normal);
+}
+
+.contentheader::before {
+    content: "#";
+    letter-spacing: 8px;
+    font-family: 'Asset', cursive;
+    color: var(--text-color-light);
+}

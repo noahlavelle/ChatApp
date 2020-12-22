@@ -16,14 +16,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
   socket.on('create name', (username) => {
-    users[socket.id] = [username, generateUserColor(users)]
-    console.log(users)
+    users[socket.id] = [username, generateUserColor(users)];
+    io.emit('append user', users);
   });
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg, users[socket.id][0], users[socket.id][1]);
+  socket.on('chat message', (msg, channel) => {
+    io.emit('chat message', msg, users[socket.id][0], users[socket.id][1], channel);
+  });
+});
+
+io.on('connection', (socket) => {
+  socket.on('disconnect', () => {
+    delete users[socket.id]
+    io.emit('append user', users);
   });
 });
 
@@ -36,7 +43,6 @@ function generateUserColor(users) {
   if (Object.values(users).indexOf(color) > -1) {
     generateUserColor(object)
   } else {
-    console.log(color)
     return color;
   }
 }

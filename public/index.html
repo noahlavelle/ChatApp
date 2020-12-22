@@ -7,32 +7,39 @@
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/globals.css">
   <link rel="stylesheet" href="./css/sidebar.css">
+  <link rel="stylesheet" href="./css/contentheader.css">
 </head>
 
 <body>
-  <div class="sidebar">
-    <article>
-      <details>
-        <summary>Chats</summary>
-        <button class="nostylebutton" onclick="changeChannel('info')" id="infoli" data-focused="true">info</button>
-        <button class="nostylebutton" onclick="changeChannel('announcments')" id="announcmentsli" data-focused="false">announcments</button>
-        <button class="nostylebutton" onclick="changeChannel('general')" id="generalli" data-focused="false">general</button>
-        <button class="nostylebutton" onclick="changeChannel('memes')" id="memesli" data-focused="false">memes</button>
-      </details>
-    </article>
-  </div>
-  <section id="content">
+  <nav class="sidebar left">
+    <div class="header">Socket.io Chat App</div>
+    <button class="nostylebutton" onclick="changeChannel('info')" id="infoli" data-focused="true">info</button>
+    <button class="nostylebutton" onclick="changeChannel('announcments')" id="announcmentsli" data-focused="false">announcments</button>
+    <button class="nostylebutton" onclick="changeChannel('general')" id="generalli" data-focused="false">general</button>
+    <button class="nostylebutton" onclick="changeChannel('memes')" id="memesli" data-focused="false">memes</button>
+  </nav>
+
+  <nav class="sidebar right">
+    <div class="header">Online Users</div>
+    <div id="onlineusers"></div>
+    
+  </nav>
     <section id="signup">
-      <form id="uname" action="">
-        <label for="uname">Username:</label> <br>
-        <input id="u" autocomplete="off">
+      <form id="uname">
+        <label for="uname">Select a Username:</label> <br>
+        <input id="u" autocomplete="off" maxlength="20">
       </form>
     </section>
+    <div class="contentheader">
+      channelname | description
+    </div>
     <section id="chat">
-      <ul id="info"></ul>
-      <ul id="announcments"></ul>
-      <ul id="general"></ul>
-      <ul id="memes"></ul>
+      <div id="channels">
+        <ul id="info" description="| Rules and Links"></ul>
+        <ul id="announcments" description="| See the latest updates"></ul>
+        <ul id="general" description="| Casual Talk"></ul>
+        <ul id="memes" description=""></ul>
+    </div>
 
       <form id="message" action="">
         <input id="m" autocomplete="off" placeholder="Message #info" />
