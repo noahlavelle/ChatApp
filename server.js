@@ -2,6 +2,8 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const fs = require('fs');
+const e = require('express');
 
 const port = process.env.PORT || 3000;
 let app = express();
@@ -12,7 +14,25 @@ const users = {
 
 }
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', (req, res) => {
+  let file
+
+  if (/./.test(req.url)) {
+    file = `./public${req.url}`
+  }
+
+  fs.readFile(file, 'utf8', (error, data) => {
+    if (error) {
+      res.statusCode = 404;
+      res.redirect(`/index.html`)
+    } else {
+      res.statusCode = 200;
+      res.sendFile(`${__dirname}${String(file.replace('.', ''))}`)
+    }
+
+  })
+
+})
 
 io.on('connection', (socket) => {
   socket.on('create name', (username) => {

@@ -1,42 +1,85 @@
-.sidebar {
-    height: 100%;
-    width: 200px;
+@media only screen and (max-width : 1024px) {
+    .sidebar {
+        height: 100%;
+        width: 70%;
+    
+        top: 0;
+        padding-top: 20px;
+    
+        position: fixed;
+    
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 1;
+    
+        color: var(--text-color-light);
+        background-color: var(--background-color-dark);
+    
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .sidebar.right {
+        right: 0;
+        visibility: hidden;
+        width: 70%;
+    }
 
-    top: 0;
-    padding-top: 20px;
+    .sidebar button, .sidebar div {
+        font-size: 60px;
+        margin: 0 30px 20px;
+    }
+    
+}
 
-    position: fixed;
+@media only screen and (min-width : 1025px) {
+    .sidebar {
+        height: 100%;
+        width: 200px;
+    
+        top: 0;
+        padding-top: 20px;
+    
+        position: fixed;
+    
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 1;
+    
+        color: var(--text-color-light);
+        background-color: var(--background-color-dark);
+    
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .sidebar.right {
+        right: 0;
+        width: 250px !important;
+    }
 
-    overflow-x: hidden;
-    overflow-y: scroll;
-    z-index: 1;
-
-    color: var(--text-color-light);
-    background-color: var(--background-color-dark);
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    font-family: 'Source Sans Pro', sans-serif;
+    .sidebar button, .sidebar div {
+        font-size: 20px;
+        margin: 0 10px 10px;
+    }
 }
 
 .sidebar.left {
     left: 0;
 }
 
-.sidebar.right {
-    right: 0;
-    width: 250px !important;
-}
-
 .sidebar button, .sidebar div {
     display: block;
     border-radius: 8px;
-    margin: 0 16px 12px;
+    width: 90%;
+    text-align: left;
     padding: 2px 7px 2px 5px;
 
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
     color: var(--text-color-light);
 
     white-space: nowrap;
