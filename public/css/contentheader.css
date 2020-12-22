@@ -1,26 +1,28 @@
 @media only screen and (max-width : 1024px) {
     .contentheader {
-        margin-left: 0;
+        padding-left: 30px;
+        font-size: 45px;
+        height: 66px;
     }
 }
 
 @media only screen and (min-width : 1025px) {
     .contentheader {
-        margin-left: 190px;
+        padding-left: 225px;
+        font-size: 22px;
+        height: 46px;
     }
 }
 
 .contentheader {
     box-shadow: 0 2px 2px var(--background-color-dark);
     background-color: var(--background-color-light);
-    padding-left: 30px;
     position: fixed;
     width: 100%;
-    height: 46px;
 
-    padding-top: 8px;
+    padding-top: 16px;
 
-    font-size: 22px;
+    
     color: var(--text-color-normal);
 }
 

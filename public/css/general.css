@@ -1,5 +1,13 @@
-#chat {
-    margin-left: 225px;
+@media only screen and (max-width : 1024px) {
+    #channels {
+        padding-top: 115px;
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    #channels {
+        padding-top: 65px;
+    }
 }
 
 .nostylebutton {
@@ -31,10 +39,6 @@
     max-height: 400px;
 }
 
-.contentheader {
-
-}
-
 #uname {
     font-size: 90px;
     font-weight: 600;
@@ -47,8 +51,4 @@
     border-radius: 8px;
     font-size: 25px;
     text-align: center;
-}
-
-#channels {
-    padding-top: 50px;
 }

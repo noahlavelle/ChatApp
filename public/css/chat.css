@@ -1,3 +1,54 @@
+@media only screen and (max-width : 1024px) {
+    form#message {
+        width: 87%;
+        height: 80px;
+    }
+
+    form#message input {
+        height: 60px;
+        font-size: 40px;
+    }
+
+    #chat {
+        margin-left: 50px;
+    }
+
+    .messageLabel {
+        font-size: 50px;
+        line-height: 6px;
+    }
+
+    .messageContent {
+        font-size: 53px;
+    }
+
+    .messageWrapper {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    form#message  {
+        width: calc(100% - 530px);
+    }
+
+    form#message input {
+        font-size: 16px;
+    }
+
+    #chat {
+        margin-left: 225px;
+    }
+
+    .messageLabel {
+        line-height: 6px;
+    }
+
+    .messageWrapper {
+        margin-bottom: 17px;
+    }
+}
+
 input {
     background-color: var(--background-color-verylight);
     color: var(--text-color-normal);
@@ -7,7 +58,6 @@ input {
 form#message {
     background-color: var(--background-color-verylight);
     color: var(--text-color-normal);
-    width: calc(100% - 530px);
     min-width: 200px;
     border-radius: 8px;
     padding: 3px;
@@ -20,8 +70,8 @@ form#message input {
     border: 0;
     padding: 10px;
     margin-right: 0.5%;
-    font-size: 16px;
-    width: 98%
+    width: 98%;
+    
 }
 
 #messages {

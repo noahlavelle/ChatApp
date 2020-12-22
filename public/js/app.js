@@ -13,6 +13,7 @@ $('.sidebar').hide();
 $('#message').hide();
 $('.contentheader').hide();
 
+
 $('#uname').submit(function (e) {
   $('.sidebar').fadeIn(() => {
     $('#message').fadeIn();
@@ -36,12 +37,12 @@ $('#message').submit(function (e) {
 
 socket.on('chat message', function (msg, username, color, msgChannel) {
   if (validURL(msg) === true) {
-    $(`#${msgChannel}`).append($(`<div style="margin-bottom:15px;><label style="color:#${color}!important;margin-bottom:15px;">${username}</label><br><a href="${msg}">${msg}</a>`))
+    $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important" class="messageStyle">${username}</label><a class="messageContent" href="${msg}">${msg}</a>`))
     if (/(?:jpg|gif|png)/.test(msg)) {
       $(`#${msgChannel}`).append($(`<img src=${msg} class="displayImage">`))
     }
   } else {
-    $(`#${msgChannel}`).append($(`<div style="margin-bottom:15px;"><label style="color:#${color}!important;">${username}</label><br><msg>${msg}</msg></div>`))
+    $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important;" class="messageLabel">${username}</label><msg class="messageContent">${msg}</msg></div>`))
   }
 });
 
@@ -76,12 +77,12 @@ function validURL(str) {
 
 if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
   $( "body" ).on("swiperight", () => {
-    $('.sidebar').animate({width: 'show'}, 60);
-    $('.contentwrapper').animate({margin: '0 0 0 60%'}, 60);
+    $('.sidebar').animate({width: '70%'}, 60);
+    $('.contentwrapper').animate({margin: '0 0 0 70%'}, 60);
   });
 
   $( "body" ).on("swipeleft", () => {
-    $('.sidebar').animate({width: 'hide'}, 60);
+    $('.sidebar').animate({width: '0'}, 60);
     $('.contentwrapper').animate({margin: '0 0 0 0'}, 60);
   });
 }
