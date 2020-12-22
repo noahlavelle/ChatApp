@@ -8,7 +8,6 @@ $('#channels').children().each(function () {
   }
 });
 
-
 $('#chat').hide();
 $('.sidebar').hide();
 $('#message').hide();
@@ -71,4 +70,18 @@ function changeChannel(channel) {
 
 function validURL(str) {
   return /(http(s)?:\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,6}|:[0-9]{3,4})\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)/.test(str)
+}
+
+// Phone Styling
+
+if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
+  $( "body" ).on("swiperight", () => {
+    $('.sidebar').animate({width: 'show'}, 60);
+    $('.contentwrapper').animate({margin: '0 0 0 60%'}, 60);
+  });
+
+  $( "body" ).on("swipeleft", () => {
+    $('.sidebar').animate({width: 'hide'}, 60);
+    $('.contentwrapper').animate({margin: '0 0 0 0'}, 60);
+  });
 }

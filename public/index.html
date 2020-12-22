@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./css/globals.css">
   <link rel="stylesheet" href="./css/sidebar.css">
   <link rel="stylesheet" href="./css/contentheader.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
 </head>
 
 <body>
@@ -30,10 +32,11 @@
         <input id="u" autocomplete="off" maxlength="20">
       </form>
     </section>
-    <div class="contentheader">
-      channelname | description
-    </div>
     <section id="chat">
+      <div class="contentwrapper">
+        <div class="contentheader">
+          channelname | description
+        </div>
       <div id="channels">
         <ul id="info" description="| Rules and Links"></ul>
         <ul id="announcments" description="| See the latest updates"></ul>
@@ -44,10 +47,12 @@
       <form id="message" action="">
         <input id="m" autocomplete="off" placeholder="Message #info" />
       </form>
+    </div>
     </section>
 </section>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
   <script src="./js/app.js"></script>
 </body>
 
