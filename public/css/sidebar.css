@@ -23,8 +23,7 @@
     
     .sidebar.right {
         right: 0;
-        visibility: hidden;
-        width: 70%;
+        width: 0%;
     }
 
     .sidebar button, .sidebar div {

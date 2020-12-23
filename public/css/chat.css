@@ -46,6 +46,7 @@
 
     .messageWrapper {
         margin-bottom: 17px;
+        word-wrap: break-word;
     }
 }
 

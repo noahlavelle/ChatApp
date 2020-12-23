@@ -35,7 +35,12 @@ $('#message').submit(function (e) {
   return false;
 });
 
+let overflowing = false;
+
 socket.on('chat message', function (msg, username, color, msgChannel) {
+  var out = document.getElementById(channelName);
+  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+
   if (validURL(msg) === true) {
     $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important" class="messageStyle">${username}</label><a class="messageContent" href="${msg}">${msg}</a>`))
     if (/(?:jpg|gif|png)/.test(msg)) {
@@ -44,6 +49,10 @@ socket.on('chat message', function (msg, username, color, msgChannel) {
   } else {
     $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important;" class="messageLabel">${username}</label><msg class="messageContent">${msg}</msg></div>`))
   }
+
+  if(isScrolledToBottom)
+    out.scrollTop = out.scrollHeight - out.clientHeight;
+
 });
 
 socket.on('append user', function (users) {
@@ -76,13 +85,27 @@ function validURL(str) {
 // Phone Styling
 
 if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
+  currentSidebar = 'none'
+
+
   $( "body" ).on("swiperight", () => {
-    $('.sidebar').animate({width: '70%'}, 60);
-    $('.contentwrapper').animate({margin: '0 0 0 70%'}, 60);
+    if (currentSidebar === 'onlineUsers') {
+      $('.sidebar.right').animate({width: '0'}, 60);
+      currentSidebar = 'none'
+    } else if (currentSidebar === 'none') {
+      $('.sidebar.left').animate({width: '70%'}, 60);
+      currentSidebar = 'channels'
+    }
   });
 
+
   $( "body" ).on("swipeleft", () => {
-    $('.sidebar').animate({width: '0'}, 60);
-    $('.contentwrapper').animate({margin: '0 0 0 0'}, 60);
+    if (currentSidebar === 'channels') {
+      $('.sidebar.left').animate({width: '0'}, 60);
+      currentSidebar = 'none'
+    } else if (currentSidebar === 'none') {
+      $('.sidebar.right').animate({width: '70%'}, 60);
+      currentSidebar = 'onlineUsers'
+    }
   });
 }
