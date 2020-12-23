@@ -61,6 +61,7 @@ form#message {
     color: var(--text-color-normal);
     min-width: 200px;
     border-radius: 8px;
+    width: 73%;
     padding: 3px;
     position: fixed;
     bottom: 30px;
@@ -70,8 +71,7 @@ form#message {
 form#message input {
     border: 0;
     padding: 10px;
-    margin-right: 0.5%;
-    width: 98%;
+    width: 98.2%;
     
 }
 
