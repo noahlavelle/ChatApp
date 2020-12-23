@@ -1,6 +1,6 @@
 @media only screen and (max-width : 1024px) {
     form#message {
-        width: 87%;
+        width: 89%;
         height: 80px;
     }
 
@@ -29,7 +29,7 @@
 
 @media only screen and (min-width : 1025px) {
     form#message  {
-        width: calc(100% - 530px);
+        width: 73%
     }
 
     form#message input {
@@ -61,7 +61,6 @@ form#message {
     color: var(--text-color-normal);
     min-width: 200px;
     border-radius: 8px;
-    width: 73%;
     padding: 3px;
     position: fixed;
     bottom: 30px;

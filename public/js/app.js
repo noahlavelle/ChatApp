@@ -50,8 +50,9 @@ socket.on('chat message', function (msg, username, color, msgChannel) {
     $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important;" class="messageLabel">${username}</label><msg class="messageContent">${msg}</msg></div>`))
   }
 
-  if(isScrolledToBottom)
+  if(isScrolledToBottom) {
     out.scrollTop = out.scrollHeight - out.clientHeight;
+  }
 
 });
 
@@ -87,6 +88,13 @@ function validURL(str) {
 if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
   currentSidebar = 'none'
 
+  // $('#m').focusin(() => {
+  //   $('.channel').css('height', '65vh')
+  // })
+
+  // $('#m').focusout(() => {
+  //   $('.channel').css('height', '75vh')
+  // })
 
   $( "body" ).on("swiperight", () => {
     if (currentSidebar === 'onlineUsers') {

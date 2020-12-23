@@ -8,6 +8,11 @@
         height: 100px;
         font-size: 50px;
     }
+
+    .channel {
+        height: 80%;
+        width: 93%;
+    }
 }
 
 @media only screen and (min-width : 1025px) {
@@ -19,6 +24,11 @@
         width: 30%;
         height: 50px;
         font-size: 25px;
+    }
+
+    .channel {
+        height: 80%;
+        width: 75%;
     }
 }
 
@@ -65,6 +75,24 @@
 
 .channel {
     padding-top: 15px;
-    height: 80vh;
-    overflow: auto;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #2E3338;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #202225;
 }
