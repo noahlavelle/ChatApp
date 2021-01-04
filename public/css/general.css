@@ -10,8 +10,8 @@
     }
 
     .channel {
-        height: 80%;
         width: 93%;
+        height: 71%;
     }
 }
 
@@ -27,8 +27,8 @@
     }
 
     .channel {
-        height: 80%;
-        width: 75%;
+        width: calc(100vw - 480px);
+        height: 79%;
     }
 }
 
@@ -74,25 +74,12 @@
 }
 
 .channel {
-    padding-top: 15px;
-    overflow-y: scroll;
-    position: fixed;
+    padding-top: 30px;
+    
+    overflow: auto;
 }
 
-.scrollbar::-webkit-scrollbar-track
-{
-	border-radius: 10px;
-	background-color: #2E3338;
-}
-
-.scrollbar::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: none;
-}
-
-.scrollbar::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	background-color: #202225;
+#channels {
+    height: 100vh;
+    overflow: visible;
 }

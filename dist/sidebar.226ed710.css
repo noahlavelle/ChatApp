@@ -1,0 +1,111 @@
+@media only screen and (max-width : 1024px) {
+    .sidebar {
+        height: 100%;
+        width: 0;
+    
+        top: 0;
+        padding-top: 20px;
+    
+        position: fixed;
+    
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 1;
+    
+        color: var(--text-color-light);
+        background-color: var(--background-color-dark);
+    
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .sidebar.right {
+        right: 0;
+        width: 0%;
+    }
+
+    .sidebar button, .sidebar div {
+        font-size: 60px;
+        margin: 0 30px 20px;
+    }
+    
+}
+
+@media only screen and (min-width : 1025px) {
+    .sidebar {
+        height: 100%;
+        width: 200px;
+    
+        top: 0;
+        padding-top: 20px;
+    
+        position: fixed;
+    
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 1;
+    
+        color: var(--text-color-light);
+        background-color: var(--background-color-dark);
+    
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .sidebar.right {
+        right: 0;
+        width: 250px !important;
+    }
+
+    .sidebar button, .sidebar div {
+        font-size: 20px;
+        margin: 0 10px 10px;
+    }
+}
+
+.sidebar.left {
+    left: 0;
+}
+
+.sidebar button, .sidebar div {
+    display: block;
+    border-radius: 8px;
+    width: 90%;
+    text-align: left;
+    padding: 2px 7px 2px 5px;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-color-light);
+
+    white-space: nowrap;
+}
+
+.sidebar button:hover, .sidebar ul:hover  {
+    background-color: var(--background-color-light);
+    color: #D7D8D9
+}
+
+.sidebar button::before {
+    content: "#";
+    letter-spacing: 8px;
+    font-family: 'Asset', cursive;
+}
+
+.sidebar button[data-focused="true"] {
+    color: var(--text-color-normal) !important;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.sidebar .header {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/*# sourceMappingURL=/sidebar.226ed710.css.map */

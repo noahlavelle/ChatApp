@@ -67,6 +67,10 @@
     }
 }
 
+.sidebar {
+    z-index: 2;
+}
+
 .sidebar.left {
     left: 0;
 }

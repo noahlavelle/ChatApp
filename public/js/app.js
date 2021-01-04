@@ -1,7 +1,21 @@
-var socket = io();
+var Scrollbar = window.Scrollbar
 
-var str = '.'
-console.log(/\./.test(str))
+var options = {
+  'damping': 0.1,
+  'thumbMinSize': 20,
+  'renderByPixels': true,
+  'alwaysShowTracks': true,
+  'continuousScrolling': true
+
+}
+
+console.log(Scrollbar)
+
+Scrollbar.init(document.querySelector('.channel'), options);
+$('.channel').css('overflow', 'visible')
+$('.scrollbar-track-y').css('background-color', '#2E3338')
+
+var socket = io();
 
 let channelName = 'info';
 
@@ -45,20 +59,13 @@ $('#message').submit(function (e) {
 let overflowing = false;
 
 socket.on('chat message', function (msg, username, color, msgChannel) {
-  var out = document.getElementById(channelName);
-  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
-
   if (validURL(msg) === true) {
-    $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important" class="messageStyle">${username}</label><a class="messageContent" href="${msg}">${msg}</a>`))
+    $(`#${msgChannel} > .scroll-content`).append($(`<div class="messageWrapper"><label style="color:#${color}!important" class="messageStyle">${username}</label><a class="messageContent" href="${msg}">${msg}</a>`))
     if (/(?:jpg|gif|png)/.test(msg)) {
-      $(`#${msgChannel}`).append($(`<img src=${msg} class="displayImage">`))
+      $(`#${msgChannel} > .scroll-content`).append($(`<img src=${msg} class="displayImage">`))
     }
   } else {
-    $(`#${msgChannel}`).append($(`<div class="messageWrapper"><label style="color:#${color}!important;" class="messageLabel">${username}</label><msg class="messageContent">${msg}</msg></div>`))
-  }
-
-  if(isScrolledToBottom) {
-    out.scrollTop = out.scrollHeight - out.clientHeight;
+    $(`#${msgChannel} > .scroll-content`).append($(`<div class="messageWrapper"><label style="color:#${color}!important;" class="messageLabel">${username}</label><msg class="messageContent">${msg}</msg></div>`))
   }
 
 });
@@ -94,14 +101,6 @@ function validURL(str) {
 
 if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
   currentSidebar = 'none'
-
-  // $('#m').focusin(() => {
-  //   $('.channel').css('height', '65vh')
-  // })
-
-  // $('#m').focusout(() => {
-  //   $('.channel').css('height', '75vh')
-  // })
 
   $( "body" ).on("swiperight", () => {
     if (currentSidebar === 'onlineUsers') {

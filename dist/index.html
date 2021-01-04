@@ -1,0 +1,59 @@
+<!doctype html>
+<html data-theme="dark">
+
+<head>
+  <title>Socket.IO chat</title>
+  <link rel="stylesheet" href="/chat.6211fe70.css">
+  <link rel="stylesheet" href="/general.a9981851.css">
+  <link rel="stylesheet" href="/globals.d2399c7f.css">
+  <link rel="stylesheet" href="/sidebar.226ed710.css">
+  <link rel="stylesheet" href="/contentheader.3872df83.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+<script src="/chat.6211fe70.js"></script><script src="/general.a9981851.js"></script><script src="/globals.d2399c7f.js"></script><script src="/sidebar.226ed710.js"></script><script src="/contentheader.3872df83.js"></script></head>
+
+<body>
+  <nav class="sidebar left">
+    <div class="header">Socket.io Chat App</div>
+    <button class="nostylebutton" onclick="changeChannel('info')" id="infoli" data-focused="true">info</button>
+    <button class="nostylebutton" onclick="changeChannel('announcments')" id="announcmentsli" data-focused="false">announcments</button>
+    <button class="nostylebutton" onclick="changeChannel('general')" id="generalli" data-focused="false">general</button>
+    <button class="nostylebutton" onclick="changeChannel('memes')" id="memesli" data-focused="false">memes</button>
+  </nav>
+
+  <nav class="sidebar right">
+    <div class="header">Online Users</div>
+    <div id="onlineusers"></div>
+    
+  </nav>
+    <section id="signup">
+      <form id="uname">
+        <label for="uname">Select a Username:</label> <br>
+        <input id="u" autocomplete="off" maxlength="20">
+      </form>
+    </section>
+      <div class="contentwrapper">
+        <div class="contentheader">
+          channelname | description
+        </div>
+        <section id="chat">
+      <div id="channels">
+        <div id="info" description="| Rules and Links" class="channel 
+        "></div>
+        <div id="announcments" description="| See the latest updates" class="channel scrollbar"></div>
+        <div id="general" description="| Casual Talk" class="channel scrollbar"></div>
+        <div id="memes" description="" class="channel"></div>
+    </div>
+      <form id="message" action="">
+        <input id="m" autocomplete="off" placeholder="Message #info">
+      </form>
+    </section></div>
+    
+
+  <script src="/socket.io.99fbd0f5.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+  <script src="/app.c3f9f951.js"></script>
+</body>
+
+</html>

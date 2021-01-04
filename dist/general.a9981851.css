@@ -1,0 +1,101 @@
+@media only screen and (max-width : 1024px) {
+    #channels {
+        padding-top: 115px;
+    }
+
+    #uname input {
+        width: 72%;
+        height: 100px;
+        font-size: 50px;
+    }
+
+    .channel {
+        height: 80%;
+        width: 93%;
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    #channels {
+        padding-top: 65px;
+    }
+
+    #uname input {
+        width: 30%;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .channel {
+        height: 80%;
+        width: 75%;
+    }
+}
+
+.nostylebutton {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.nostylebutton:hover {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.nostylebutton:active {
+    outline: none;
+    border: none;
+}
+
+.nostylebutton:focus {
+    outline: 0;
+}
+
+.displayImage {
+    border-radius: 8px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#uname {
+    font-size: 90px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#uname input {
+
+    border-radius: 8px;
+    text-align: center;
+}
+
+.channel {
+    padding-top: 15px;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #2E3338;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #202225;
+}
+
+
+/*# sourceMappingURL=/general.a9981851.css.map */

@@ -1,0 +1,36 @@
+@media only screen and (max-width : 1024px) {
+    .contentheader {
+        padding-left: 30px;
+        font-size: 45px;
+        height: 66px;
+    }
+}
+
+@media only screen and (min-width : 1025px) {
+    .contentheader {
+        padding-left: 225px;
+        font-size: 22px;
+        height: 46px;
+    }
+}
+
+.contentheader {
+    box-shadow: 0 2px 2px var(--background-color-dark);
+    background-color: var(--background-color-light);
+    position: fixed;
+    width: 100%;
+
+    padding-top: 16px;
+
+    
+    color: var(--text-color-normal);
+}
+
+.contentheader::before {
+    content: "#";
+    letter-spacing: 8px;
+    font-family: 'Asset', cursive;
+    color: var(--text-color-light);
+}
+
+/*# sourceMappingURL=/contentheader.3872df83.css.map */
