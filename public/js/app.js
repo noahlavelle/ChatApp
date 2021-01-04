@@ -1,5 +1,8 @@
 var socket = io();
 
+var str = '.'
+console.log(/\./.test(str))
+
 let channelName = 'info';
 
 $('#channels').children().each(function () {
@@ -15,6 +18,7 @@ $('.contentheader').hide();
 
 
 $('#uname').submit(function (e) {
+  if (/([A-Z,a-z,1-2])/.test($('#u').val())) {
   $('.sidebar').fadeIn(() => {
     $('#message').fadeIn();
     $('.contentheader').fadeIn();
@@ -26,13 +30,16 @@ $('#uname').submit(function (e) {
   $('#signup').hide()
   $('#chat').show()
   return false;
+}
 });
 
 $('#message').submit(function (e) {
-  e.preventDefault();
-  socket.emit('chat message', $('#m').val(), channelName);
-  $('#m').val('');
-  return false;
+  if (/([A-Z,a-z,1-2])/.test($('#m').val())) {
+    e.preventDefault();
+    socket.emit('chat message', $('#m').val(), channelName);
+    $('#m').val('');
+    return false;
+  }
 });
 
 let overflowing = false;
