@@ -15,6 +15,9 @@ const users = {
 }
 
 app.get('*', (req, res) => {
+  var ipInfo = getIP(req);
+  console.log(ipInfo);
+
   let file
 
   if (/./.test(req.url)) {
