@@ -14,6 +14,8 @@ const users = {
 
 }
 
+var getIP = require('ipware')().get_ip;
+
 app.get('*', (req, res) => {
   var ipInfo = getIP(req);
   console.log(ipInfo);
