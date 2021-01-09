@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "ipware": "^2.0.0",
     "nodemon": "^2.0.6",
     "parcel": "^1.12.4",
     "smooth-scrollbar": "^8.5.3",
